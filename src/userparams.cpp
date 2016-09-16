@@ -86,11 +86,7 @@ static void loadRenderingParams(RenderingParams& params, LPCWSTR section, LPCWST
 		L"PixelGeometry",
 		params.PixelGeometry,
 		path);
-	params.RenderingMode = (DWRITE_RENDERING_MODE)GetPrivateProfileIntW(
-		section,
-		L"RenderingMode",
-		params.RenderingMode,
-		path);
+	params.RenderingMode = (DWRITE_RENDERING_MODE)DWRITE_RENDERING_MODE_OUTLINE;
 	params.GrayscaleEnhancedContrast = GetPrivateProfileIntW(
 		section,
 		L"GrayscaleEnhancedContrast",
@@ -101,11 +97,7 @@ static void loadRenderingParams(RenderingParams& params, LPCWSTR section, LPCWST
 		L"GridFitMode",
 		params.GridFitMode,
 		path);
-	params.RenderingMode1 = (DWRITE_RENDERING_MODE1)GetPrivateProfileIntW(
-		section,
-		L"RenderingMode1",
-		params.RenderingMode1,
-		path);
+	params.RenderingMode1 = (DWRITE_RENDERING_MODE1)DWRITE_RENDERING_MODE_OUTLINE;
 }
 
 static void initDWriteRenderingParams(RenderingParams& params, IDWriteFactory3* pDWriteFactory3) {
